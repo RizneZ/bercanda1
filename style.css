@@ -1,968 +1,638 @@
 
-/* =========================================
+/* =====================================
    STUDYHUB - THE LEARNING GARDEN
-   Main Stylesheet
-========================================= */
+   CSS UTAMA
+===================================== */
 
-/* GOOGLE FONT */
+/* FONT */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
 
-
-/* =========================================
-   1. ROOT VARIABLES
-========================================= */
-
+/* VARIABLES */
 :root {
-    --green-dark: #28583D;
-    --green-main: #4E9561;
-    --green-light: #B9DDA8;
-    --grass: #A9CE8B;
-
-    --cream: #FFF8E9;
-    --brown: #805B3D;
-    --stone: #D8C9A9;
-
-    --pink: #EF8FAF;
-    --purple: #9A80D8;
-    --blue: #77AEEA;
-    --yellow: #F5CB69;
-
-    --text-dark: #314333;
-    --text-light: #7D8D78;
-
-    --shadow: 0 8px 24px rgba(45, 79, 48, .12);
-    --radius: 20px;
+  --green-dark: #28583d;
+  --green-main: #4e9561;
+  --green-light: #b9dda8;
+  --cream: #fff8e9;
+  --yellow: #f5cb69;
+  --text-dark: #314333;
+  --text-light: #7d8d78;
+  --shadow: 0 8px 24px rgba(45, 79, 48, .12);
+  --radius: 20px;
 }
 
-
-/* =========================================
-   2. GLOBAL
-========================================= */
-
+/* RESET */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Nunito', sans-serif;
-    background: #F4F7E9;
-    color: var(--text-dark);
-    overflow-x: hidden;
-}
-
-button,
-input {
-    font-family: inherit;
+  font-family: 'Nunito', sans-serif;
+  background: #f3f8ef;
+  color: var(--text-dark);
+  overflow-x: hidden;
 }
 
 button {
-    cursor: pointer;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-
-/* =========================================
-   3. MAIN HEADER
-========================================= */
-
+/* HEADER */
 .topbar {
-    width: 100%;
-    min-height: 76px;
-    padding: 12px 30px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    background: rgba(255, 255, 255, .96);
-    border-bottom: 1px solid #E6EEDC;
-
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  width: 100%;
+  min-height: 70px;
+  padding: 12px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  box-shadow: 0 3px 15px rgba(0,0,0,.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  font-size: 25px;
+  font-weight: 900;
+  color: var(--green-dark);
 }
 
-.brand-icon {
-    width: 45px;
-    height: 45px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: white;
-    background: linear-gradient(135deg, #397B4D, #85B96E);
-
-    border-radius: 14px;
-    font-size: 23px;
+.brand span {
+  color: #e5ad36;
 }
 
-.brand h4 {
-    font-size: 20px;
-    font-weight: 900;
-    color: var(--green-dark);
-    margin: 0;
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-.brand small {
-    font-size: 11px;
-    color: var(--text-light);
+.level {
+  background: #fff3cd;
+  color: #946c15;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: 800;
 }
 
-.topbar-actions {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.avatar {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: #d9efdc;
+  border-radius: 50%;
+  font-size: 21px;
 }
 
-.coin-box,
-.level-box {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    padding: 9px 14px;
-    border-radius: 12px;
-
-    background: #F2F7E9;
-    font-weight: 800;
+/* MAIN CONTAINER */
+.container {
+  width: 100%;
+  max-width: 1250px;
+  margin: auto;
+  padding: 25px 20px;
 }
 
-.coin-box i {
-    color: #E9B83E;
+/* WELCOME */
+.welcome {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  background: linear-gradient(120deg, #347e50, #75b77a);
+  border-radius: 25px;
+  box-shadow: var(--shadow);
 }
 
-.level-box i {
-    color: #8D71D4;
+.welcome h1 {
+  font-size: clamp(24px, 4vw, 35px);
+  margin-bottom: 8px;
 }
 
-.profile-avatar {
-    width: 42px;
-    height: 42px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #F2D9A7;
-    border: 3px solid white;
-    border-radius: 50%;
-
-    font-size: 20px;
+.welcome p {
+  max-width: 600px;
+  opacity: .9;
+  line-height: 1.6;
 }
 
-
-/* =========================================
-   4. MAIN GAME LAYOUT
-========================================= */
-
-.game-container {
-    width: 100%;
-    min-height: calc(100vh - 76px);
-    padding: 25px;
-
-    display: flex;
-    gap: 22px;
-    align-items: stretch;
+.welcome-icon {
+  font-size: 75px;
 }
 
-.game-sidebar {
-    width: 250px;
-    flex-shrink: 0;
-
-    padding: 20px;
-
-    background: white;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+/* SECTION TITLE */
+.section-title {
+  margin: 30px 0 15px;
+  font-size: 22px;
+  font-weight: 900;
 }
 
-.sidebar-title {
-    font-size: 12px;
-    font-weight: 900;
-    color: #9AA894;
-    letter-spacing: 1px;
-    margin: 8px 0;
-}
-
-.sidebar-link {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    padding: 13px 15px;
-
-    border-radius: 13px;
-    color: #647665;
-
-    font-size: 14px;
-    font-weight: 800;
-
-    transition: .25s;
-}
-
-.sidebar-link i {
-    font-size: 19px;
-}
-
-.sidebar-link:hover,
-.sidebar-link.active {
-    background: #EAF4E6;
-    color: var(--green-dark);
-    transform: translateX(4px);
-}
-
-.game-main {
-    flex: 1;
-    min-width: 0;
-}
-
-
-/* =========================================
-   5. WELCOME BANNER
-========================================= */
-
-.game-welcome {
-    padding: 25px 30px;
-    margin-bottom: 22px;
-
-    position: relative;
-    overflow: hidden;
-
-    background: linear-gradient(
-        120deg,
-        #326D48,
-        #70A967,
-        #A6C985
-    );
-
-    border-radius: 24px;
-    color: white;
-
-    box-shadow: var(--shadow);
-}
-
-.game-welcome h2 {
-    font-size: clamp(22px, 3vw, 32px);
-    font-weight: 900;
-    margin-bottom: 8px;
-}
-
-.game-welcome p {
-    font-size: 14px;
-    opacity: .9;
-    margin-bottom: 0;
-}
-
-.game-welcome::after {
-    content: "🌼";
-    position: absolute;
-    right: 65px;
-    top: -15px;
-    font-size: 110px;
-    opacity: .45;
-    transform: rotate(15deg);
-}
-
-
-/* =========================================
-   6. ROOM SELECTOR
-========================================= */
-
-.room-section {
-    margin-bottom: 24px;
-}
-
-.section-heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-
-    margin-bottom: 16px;
-}
-
-.section-heading h3 {
-    font-size: 20px;
-    font-weight: 900;
-    margin: 0;
-}
-
-.section-heading p {
-    font-size: 13px;
-    color: var(--text-light);
-    margin: 3px 0 0;
-}
-
-.room-container {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+/* ROOM SELECTOR */
+.room-selector {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .room-card {
-    position: relative;
-    overflow: hidden;
-
-    min-height: 180px;
-    padding: 23px;
-
-    display: flex;
-    align-items: center;
-    gap: 18px;
-
-    border-radius: 22px;
-    border: 3px solid transparent;
-
-    box-shadow: var(--shadow);
-    cursor: pointer;
-
-    transition: .3s;
+  min-width: 0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+  background: white;
+  border: 3px solid transparent;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transition: .25s;
 }
 
 .room-card:hover {
-    transform: translateY(-6px);
+  transform: translateY(-5px);
 }
 
-.room-card.information {
-    background: linear-gradient(135deg, #D9EFCB, #A7D3A2);
-    border-color: #8AB985;
+.room-card.active {
+  border-color: var(--green-main);
+  background: #f1fbf1;
 }
 
-.room-card.nursing {
-    background: linear-gradient(135deg, #FFE1E9, #F4B7CC);
-    border-color: #E9A3BC;
+.room-icon {
+  width: 65px;
+  height: 65px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: #eaf5e9;
+  border-radius: 18px;
+  font-size: 43px;
 }
 
-.room-illustration {
-    width: 95px;
-    height: 95px;
-    flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: rgba(255,255,255,.65);
-    border-radius: 25px;
-
-    font-size: 55px;
+.room-card h3 {
+  font-size: 18px;
+  margin-bottom: 4px;
 }
 
-.room-info h4 {
-    font-size: 19px;
-    font-weight: 900;
-    margin-bottom: 5px;
+.room-card p {
+  color: var(--text-light);
+  font-size: 13px;
 }
 
-.room-info p {
-    font-size: 12px;
-    margin-bottom: 10px;
+/* GARDEN HEADING */
+.garden-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 30px 0 15px;
 }
 
-.room-info span {
-    padding: 5px 11px;
-    background: rgba(255,255,255,.7);
-    border-radius: 30px;
-    font-size: 11px;
-    font-weight: 900;
+.garden-heading h2 {
+  font-size: 22px;
+  font-weight: 900;
 }
 
-.room-card.selected {
-    outline: 3px solid #467E4E;
-    outline-offset: 3px;
+.garden-heading p {
+  color: var(--text-light);
+  font-size: 13px;
 }
 
-
-/* =========================================
-   7. GARDEN WORLD
-========================================= */
-
-.garden-section {
-    margin-top: 25px;
-}
-
+/* GARDEN MAP */
 .garden-map {
-    position: relative;
-    overflow: hidden;
-
-    min-height: 600px;
-    padding: 35px;
-
-    border: 8px solid #D6C69C;
-    border-radius: 30px;
-
-    background-color: #91C879;
-
-    background-image:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(255,255,255,.12) 0 3px,
-            transparent 4px
-        ),
-        radial-gradient(
-            circle at 75% 65%,
-            rgba(41,105,53,.12) 0 4px,
-            transparent 5px
-        ),
-        linear-gradient(
-            135deg,
-            #A9D58C,
-            #8DC275,
-            #B6D997
-        );
-
-    background-size: 65px 65px, 85px 85px, auto;
-
-    box-shadow:
-        inset 0 0 35px rgba(47,91,42,.15),
-        var(--shadow);
+  position: relative;
+  overflow: hidden;
+  min-height: 450px;
+  padding: 30px 20px;
+  border: 7px solid #6da85e;
+  border-radius: 25px;
+  background:
+    radial-gradient(ellipse at 15% 20%, #9bd38c 0 8%, transparent 9%),
+    radial-gradient(ellipse at 85% 80%, #a4d98c 0 10%, transparent 11%),
+    radial-gradient(ellipse at 80% 15%, #91ca80 0 8%, transparent 9%),
+    linear-gradient(135deg, #a9d995, #82c47b);
+  box-shadow: inset 0 0 30px rgba(40,100,45,.15), var(--shadow);
 }
-
-/* Rumput dekoratif */
 
 .garden-map::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background:
-        radial-gradient(ellipse, rgba(255,255,255,.2), transparent 65%);
-
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 75px;
+  top: 48%;
+  left: -10%;
+  background: #e8d39c;
+  border: 8px solid #d4bd83;
+  border-left: none;
+  border-right: none;
+  transform: rotate(-12deg);
+  opacity: .9;
+  pointer-events: none;
 }
-
-/* Jalan setapak */
-
-.garden-path {
-    position: absolute;
-    z-index: 1;
-
-    width: 80%;
-    height: 75%;
-
-    top: 12%;
-    left: 10%;
-
-    border: 22px dashed #E5D5AE;
-    border-radius: 48% 35% 45% 30%;
-
-    opacity: .85;
-    transform: rotate(-8deg);
-
-    filter: drop-shadow(0 4px 2px rgba(80,65,40,.12));
-
-    pointer-events: none;
-}
-
-/* Dekorasi taman */
 
 .garden-decoration {
-    position: absolute;
-    z-index: 2;
-
-    font-size: 35px;
-    pointer-events: none;
-
-    animation: floating 4s ease-in-out infinite;
+  position: absolute;
+  z-index: 1;
+  font-size: 35px;
+  opacity: .85;
+  pointer-events: none;
+  animation: floating 4s ease-in-out infinite;
 }
 
-.decoration-tree-1 {
-    top: 7%;
-    left: 5%;
+.decoration-1 {
+  top: 20px;
+  left: 20px;
 }
 
-.decoration-tree-2 {
-    top: 12%;
-    right: 6%;
+.decoration-2 {
+  top: 20px;
+  right: 25px;
 }
 
-.decoration-tree-3 {
-    bottom: 8%;
-    left: 7%;
+.decoration-3 {
+  bottom: 20px;
+  left: 25px;
 }
 
-.decoration-tree-4 {
-    bottom: 9%;
-    right: 8%;
+.decoration-4 {
+  bottom: 20px;
+  right: 25px;
 }
 
-.decoration-pond {
-    top: 42%;
-    right: 5%;
-    font-size: 55px;
+.garden-label {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 900;
+  color: #28603b;
 }
 
-@keyframes floating {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-8px);
-    }
-}
-
-
-/* =========================================
-   8. FLOWER GARDEN GRID
-========================================= */
-
+/* FLOWER GRID */
 .flower-grid {
-    position: relative;
-    z-index: 3;
-
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 32px 20px;
-
-    padding: 35px 15px;
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
 }
 
 .flower-card {
-    position: relative;
-
-    min-height: 145px;
-    padding: 12px 8px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    background: rgba(255,255,255,.75);
-    border: 2px solid rgba(255,255,255,.85);
-
-    border-radius: 20px;
-
-    box-shadow: 0 7px 12px rgba(43,81,43,.13);
-
-    transition: .3s;
-    cursor: pointer;
+  min-width: 0;
+  min-height: 105px;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(255,255,255,.91);
+  border: 2px solid rgba(255,255,255,.8);
+  border-radius: 18px;
+  box-shadow: 0 5px 12px rgba(39,91,47,.13);
+  transition: .25s;
 }
 
 .flower-card:hover {
-    transform: translateY(-9px) scale(1.04);
-    background: white;
-    box-shadow: 0 13px 20px rgba(43,81,43,.2);
+  transform: translateY(-7px) scale(1.04);
+  background: white;
 }
 
 .flower-card.selected {
-    border: 3px solid #FFD45C;
-    background: #FFF9DE;
-
-    transform: translateY(-5px);
+  border: 3px solid #f0b83e;
+  background: #fff9dc;
 }
 
 .flower-icon {
-    width: 72px;
-    height: 72px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 48px;
-
-    border-radius: 50%;
-    background: rgba(255,255,255,.6);
-
-    filter: drop-shadow(0 5px 3px rgba(0,0,0,.12));
-
-    animation: flower-bloom 3s ease-in-out infinite;
+  display: block;
+  margin-bottom: 4px;
+  font-size: 35px;
+  animation: flower-bloom 3s ease-in-out infinite;
 }
 
-@keyframes flower-bloom {
-    0%, 100% {
-        transform: scale(1) rotate(-3deg);
-    }
-
-    50% {
-        transform: scale(1.08) rotate(3deg);
-    }
+.flower-card h4 {
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 900;
 }
 
-.flower-card h5 {
-    font-size: 12px;
-    font-weight: 900;
-    text-align: center;
-    margin: 9px 0 3px;
-}
-
-.flower-card small {
-    font-size: 10px;
-    color: #758675;
-    text-align: center;
-}
-
-.flower-status {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-
-    width: 20px;
-    height: 20px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-    background: #D9F1D5;
-    color: #39854B;
-
-    font-size: 11px;
-}
-
-.flower-card.completed .flower-status {
-    background: #F9D56C;
-    color: #87631B;
-}
-
-
-/* =========================================
-   9. WALKING PLAYER
-========================================= */
-
+/* PLAYER CHARACTER */
 .player-character {
-    position: absolute;
-    z-index: 10;
-
-    left: 50%;
-    top: 75%;
-
-    width: 65px;
-    height: 65px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: white;
-    border: 3px solid #E8D6A8;
-    border-radius: 50%;
-
-    font-size: 38px;
-
-    box-shadow: 0 5px 12px rgba(0,0,0,.2);
-
-    transition:
-        left 1.2s ease-in-out,
-        top 1.2s ease-in-out;
+  position: absolute;
+  z-index: 4;
+  top: 75%;
+  left: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border: 3px solid #e8d6a8;
+  border-radius: 50%;
+  font-size: 35px;
+  box-shadow: 0 5px 12px rgba(0,0,0,.2);
+  transform: translate(-50%, -50%);
+  transition: left 1s ease, top 1s ease;
+  pointer-events: none;
 }
 
-.player-character.walking {
-    animation: player-walk .3s infinite alternate;
+/* SUBJECT DETAIL */
+.detail-panel {
+  display: none;
+  margin-top: 20px;
+  padding: 22px;
+  background: white;
+  border: 1px solid #e5eedf;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  animation: appear .3s ease;
 }
 
-@keyframes player-walk {
-    from {
-        transform: translateY(0) rotate(-7deg);
-    }
-
-    to {
-        transform: translateY(-6px) rotate(7deg);
-    }
+.detail-panel.show {
+  display: block;
 }
 
-
-/* =========================================
-   10. FLOWER DETAIL PANEL
-========================================= */
-
-.flower-detail {
-    margin-top: 20px;
-    padding: 22px;
-
-    background: white;
-    border-radius: 20px;
-
-    box-shadow: var(--shadow);
-    border: 1px solid #E5EEDF;
+.detail-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
 }
 
-.flower-detail h4 {
-    font-weight: 900;
-    font-size: 19px;
+.detail-icon {
+  font-size: 45px;
 }
 
-.flower-detail p {
-    color: var(--text-light);
-    font-size: 13px;
+.detail-panel h2 {
+  font-size: 20px;
 }
 
-.detail-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 15px;
+.detail-panel p {
+  margin: 8px 0 15px;
+  color: var(--text-light);
+  line-height: 1.6;
 }
 
-.btn-garden {
-    padding: 10px 18px;
-
-    border: none;
-    border-radius: 12px;
-
-    background: var(--green-main);
-    color: white;
-
-    font-size: 13px;
-    font-weight: 900;
-
-    transition: .25s;
+/* BUTTONS */
+.primary-btn,
+.secondary-btn {
+  padding: 11px 18px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 900;
+  transition: .2s;
 }
 
-.btn-garden:hover {
-    background: var(--green-dark);
-    transform: translateY(-2px);
+.primary-btn {
+  background: var(--green-main);
+  color: white;
 }
 
-.btn-garden-outline {
-    background: white;
-    border: 1px solid #D5E3D0;
-    color: var(--green-dark);
+.primary-btn:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
 }
 
+.secondary-btn {
+  background: #edf5ed;
+  color: var(--green-dark);
+}
 
-/* =========================================
-   11. LEARNING ROOM
-========================================= */
+.secondary-btn:hover {
+  background: #dcebd9;
+}
 
+/* LEARNING ROOM */
 .learning-room {
-    padding: 25px;
-    margin-top: 20px;
-
-    background: white;
-    border-radius: 22px;
-
-    box-shadow: var(--shadow);
+  display: none;
+  margin-top: 20px;
+  padding: 25px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
 }
 
-.learning-room h3 {
-    font-size: 21px;
-    font-weight: 900;
+.learning-room.show {
+  display: block;
+  animation: appear .3s ease;
 }
 
-.learning-menu {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
-    margin-top: 20px;
+.learning-room h2 {
+  margin-bottom: 10px;
 }
 
-.learning-item {
-    padding: 20px 12px;
-    text-align: center;
-
-    border-radius: 16px;
-    background: #F4F8EF;
-
-    transition: .25s;
+.learning-room p {
+  color: var(--text-light);
+  line-height: 1.7;
 }
 
-.learning-item:hover {
-    background: #E5F1DC;
-    transform: translateY(-5px);
+.learning-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
 }
 
-.learning-item i {
-    font-size: 30px;
-    color: var(--green-main);
+/* DASHBOARD */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 25px;
 }
 
-.learning-item h6 {
-    font-size: 13px;
-    font-weight: 900;
-    margin-top: 10px;
+.info-card {
+  min-width: 0;
+  padding: 22px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
 }
 
-.learning-item small {
-    color: var(--text-light);
-    font-size: 11px;
+.info-card h3 {
+  margin-bottom: 15px;
 }
 
-
-/* =========================================
-   12. PROGRESS & ACHIEVEMENT
-========================================= */
-
-.progress-panel {
-    padding: 22px;
-    background: white;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
+.info-card p,
+.info-card small {
+  color: var(--text-light);
 }
 
-.progress-panel h5 {
-    font-weight: 900;
-    font-size: 17px;
-}
-
-.progress-track {
-    height: 12px;
-    overflow: hidden;
-
-    border-radius: 20px;
-    background: #EAF0E5;
+/* PROGRESS */
+.progress-bar {
+  height: 12px;
+  margin: 10px 0;
+  overflow: hidden;
+  background: #e9f0e9;
+  border-radius: 20px;
 }
 
 .progress-fill {
-    height: 100%;
-    width: 0%;
-
-    background: linear-gradient(90deg, #5B9D66, #B5D97F);
-
-    border-radius: inherit;
-    transition: width .5s ease;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #61b875, #a4d87d);
+  border-radius: 20px;
+  transition: width .4s ease;
 }
 
-.achievement-card {
-    padding: 18px;
-
-    background: linear-gradient(135deg, #FFF1C9, #FFE2A0);
-    border-radius: 18px;
-
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.achievement-icon {
-    font-size: 36px;
-}
-
-.achievement-card h6 {
-    font-weight: 900;
-    margin: 0;
-}
-
-.achievement-card small {
-    font-size: 11px;
-}
-
-
-/* =========================================
-   13. AI ASSISTANT
-========================================= */
-
-.ai-assistant {
-    padding: 22px;
-
-    border-radius: 20px;
-
-    color: white;
-    background: linear-gradient(135deg, #7056B8, #AB83DB);
-
-    box-shadow: 0 8px 20px rgba(113,79,177,.2);
-}
-
-.ai-assistant h5 {
-    font-size: 18px;
-    font-weight: 900;
-}
-
-.ai-assistant p {
-    font-size: 13px;
-    opacity: .9;
-}
-
-.ai-assistant button {
-    background: white;
-    color: #7859B5;
-    border: none;
-
-    padding: 10px 15px;
-    border-radius: 12px;
-
-    font-size: 12px;
-    font-weight: 900;
-}
-
-
-/* =========================================
-   14. TIMER
-========================================= */
-
-.study-timer {
-    padding: 25px;
-
-    background: white;
-    border-radius: 20px;
-
-    box-shadow: var(--shadow);
-    text-align: center;
-}
-
+/* TIMER */
 .timer-display {
-    font-size: 42px;
-    font-weight: 900;
-    color: var(--green-dark);
-
-    font-variant-numeric: tabular-nums;
+  margin: 10px 0;
+  color: var(--green-dark);
+  font-size: 35px;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
 }
 
 .timer-controls {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-
-/* =========================================
-   15. UTILITY
-========================================= */
-
-.hidden {
-    display: none !important;
+/* FOOTER */
+.footer {
+  padding: 30px 15px;
+  text-align: center;
+  color: var(--text-light);
+  font-size: 13px;
+  line-height: 1.8;
 }
 
-.text-muted-custom {
-    color: var(--text-light);
+/* ANIMATIONS */
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
-.rounded-game {
-    border-radius: var(--radius);
+@keyframes flower-bloom {
+  0%, 100% {
+    transform: scale(1) rotate(-3deg);
+  }
+  50% {
+    transform: scale(1.08) rotate(3deg);
+  }
 }
 
-
-/* =========================================
-   16. ANIMATIONS
-========================================= */
-
-@keyframes fade-in {
-    from {
-        opacity: 0;
-        transform: translateY(12px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.fade-in {
-    animation: fade-in .5s ease forwards;
+/* RESPONSIVE - TABLET */
+@media (max-width: 900px) {
+  .container {
+    padding: 20px 15px;
+  }
+
+  .flower-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+  }
+}
+
+/* RESPONSIVE - MOBILE */
+@media (max-width: 600px) {
+  .topbar {
+    padding: 12px 16px;
+  }
+
+  .brand {
+    font-size: 21px;
+  }
+
+  .topbar-right {
+    gap: 8px;
+  }
+
+  .level {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .welcome {
+    padding: 22px;
+  }
+
+  .welcome-icon {
+    font-size: 45px;
+  }
+
+  .room-selector,
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .room-card {
+    padding: 15px;
+  }
+
+  .room-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 35px;
+  }
+
+  .garden-map {
+    min-height: 480px;
+    padding: 25px 10px;
+  }
+
+  .flower-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px 8px;
+  }
+
+  .flower-card {
+    min-height: 95px;
+    padding: 8px 5px;
+  }
+
+  .flower-icon {
+    font-size: 30px;
+  }
+
+  .flower-card h4 {
+    font-size: 11px;
+  }
+
+  .learning-room {
+    padding: 18px;
+  }
+}
+
+/* RESPONSIVE - SMALL MOBILE */
+@media (max-width: 380px) {
+  .flower-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .welcome-icon {
+    font-size: 35px;
+  }
+
+  .detail-top {
+    align-items: flex-start;
+  }
 }
